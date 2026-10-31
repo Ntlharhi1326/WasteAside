@@ -1,383 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Wastewise — Waste Management and Recycling Website Template</title>
-    <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
-    <meta content="Wastewise — Waste Management and Recycling Website Template" name="description" >
-    <meta content="" name="keywords" >
-    <meta content="" name="author" >
-    <!-- CSS Files
-    ================================================== -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
-    <link href="css/plugins.css" rel="stylesheet" type="text/css" >
-    <link href="css/style.css" rel="stylesheet" type="text/css" >
-    <!-- color scheme -->
-    <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Media Portal | WasteAside</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7faf7;
+            color: #26332b;
+            margin: 0;
+            padding: 40px 5%;
+        }
+
+        .hub {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #123d2b;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .back-link:hover {
+            color: #639b42;
+        }
+
+        h1 {
+            color: #123d2b;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #123d2b;
+            margin-top: 45px;
+        }
+
+        .intro {
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Recycling photo gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+            text-align: left;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            background: #e4eee5;
+        }
+
+        .photo-caption {
+            padding: 18px;
+        }
+
+        .photo-caption h3 {
+            color: #123d2b;
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+
+        .photo-caption p {
+            color: #59635c;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Gallery category navigation */
+        .gallery-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .folder-link {
+            background: white;
+            border: 2px solid #123d2b;
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #123d2b;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .folder-link:hover {
+            background: #123d2b;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .folder-link span {
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .folder-link:hover span {
+            color: #b6e879;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            background: #123d2b;
+            color: white;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 25px 4%;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            .photo-card img {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div id="wrapper">
-        <a href="#" id="back-to-top"></a>
-        
-        <!-- preloader begin -->
-        <div id="de-loader"></div>
-        <!-- preloader end -->
 
-        <!-- header begin -->
-        <header class="header-light">
-            <div id="topbar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="d-flex justify-content-between xs-hide">
-                                <div class="d-flex">
-                                    <div class="topbar-widget me-3"><a href="#"><i class="icofont-clock-time"></i>Monday - Friday 08.00 - 18.00</a></div>
-                                    <div class="topbar-widget me-3"><a href="#"><i class="icofont-location-pin"></i>100 S Main St, New York, NY</a></div>
-                                    <div class="topbar-widget me-3"><a href="#"><i class="icofont-phone"></i>+1 123 456 789</a></div>
-                                </div>
+<div class="hub">
 
-                                <div class="d-flex">
-                                    <div class="social-icons">
-                                        <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
-                                        <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
-                                        <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
-                                        <a href="#"><i class="fa-brands fa-pinterest fa-lg"></i></a>
-                                        <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
+    <a href="index.html" class="back-link">
+        &larr; Back to Main Site
+    </a>
+
+    <h1>WasteAside Media &amp; Gallery Portal</h1>
+
+    <p class="intro">
+        Welcome to WasteAside's Media and Gallery Portal.
+        Explore recycling activities, waste management operations,
+        environmental conservation and community initiatives.
+        Together, we can work towards a cleaner and greener South Africa.
+    </p>
+
+    <!-- RECYCLING PICTURE GALLERY -->
+
+    <h2>♻ Recycling in Action</h2>
+
+    <p class="intro">
+        Discover how responsible waste disposal, recycling and
+        community participation help protect our environment.
+    </p>
+
+    <div class="photo-gallery">
+
+        <!-- Picture 1: Community Recycling -->
+        <div class="photo-card">
+
+            <img
+                    src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80"
+                    alt="Recyclable materials collected for recycling"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='images/community-recycling.jpg';">
+
+            <div class="photo-caption">
+                <h3>Community Recycling</h3>
+
+                <p>
+                    Recycling helps communities reduce waste,
+                    reuse valuable materials and keep neighbourhoods clean.
+                </p>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="de-flex sm-pt10">
-                            <div class="de-flex-col">
-                                <!-- logo begin -->
-                                <div id="logo">
-                                    <a href="index.html">
-                                        <img class="logo-main" src="images/logo-black.webp" alt="" >
-                                        <img class="logo-mobile" src="images/logo-black.webp" alt="" >
-                                    </a>
-                                </div>
-                                <!-- logo end -->
-                            </div>
-                            <div class="de-flex-col header-col-mid">
-                                <!-- mainemenu begin -->
-                                <ul id="mainmenu">
-                                    <li><a class="menu-item" href="index.html">Home</a>
-                                        <ul>
-                                            <li><a href="index.html">Homepage 1</a></li>
-                                            <li><a href="homepage-2.html">Homepage 2</a></li>
-                                            <li><a href="homepage-3.html">Homepage 3</a></li>
-                                            <li><a href="homepage-4.html">Homepage 4</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="services.html">Services</a>
-                                        <ul>
-                                            <li><a href="services.html">All Services Style 1</a></li>
-                                            <li><a href="services-2.html">All Services Style 2</a></li>
-                                            <li><a href="service-single.html">Service Single</a></li>
-                                            <li><a href="pricing-table.html">Pricing Table</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="projects.html">Projects</a></li>
-                                    <li><a class="menu-item" href="#">Company</a>
-                                        <ul>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="team.html">Our Team</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="blog.html">Blog</a></li>
-                                    <li><a class="menu-item" href="contact.html">Contact</a></li>
-                                </ul>
-                                <!-- mainmenu end -->
-                            </div>
-                            <div class="de-flex-col">
-                                <div class="menu_side_area">
-                                    <a href="booking.html" class="btn-main">Schedule Pickup</a>
-                                    <span id="menu-btn"></span>
-                                </div>
 
-                                <div id="btn-extra">
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- header end -->
-        <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
-
-            <div id="top"></div>
-
-            <section class="bg-color section-dark text-light no-top no-bottom overflow-hidden">
-                <div class="container-fluid position-relative half-fluid">
-                  <div class="container">
-                    <div class="row">
-                      <!-- Image -->
-                      <div class="col-lg-6 position-lg-absolute right-half h-100">
-                        <div class="de-gradient-edge-top dark"></div>
-                        <div class="image jarallax">
-                            <img src="images/background/12.webp" class="jarallax-img" alt="">
-                        </div>
-                      </div>
-                      <!-- Text -->
-                      <div class="col-lg-6 relative">
-                            <div class="me-lg-4">
-                                <div class="spacer-double"></div>
-                                <div class="spacer-double sm-hide"></div>
-                                <div class="spacer-single sm-hide"></div>
-                                <div class="spacer-single sm-hide"></div>
-                                <div class="spacer-single sm-hide"></div>
-                                <ul class="crumb">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li class="active">Gallery</li>
-                                </ul>                                
-                                <h1 class="mb-2 wow fadeInUp" data-wow-delay=".2s">Gallery</h1>
-                                <p class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">Smart Waste Disposal for a Cleaner Future</p>
-                                <div class="spacer-double"></div>
-                                <div class="spacer-single sm-hide"></div>
-
-                                <img src="images/misc/recycle-crop-2.webp" class="w-30 abs end-0 bottom-0 z-3" alt="">
-                            </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </section>
-            
-
-            <section class="relative">
-                <div class="container">
-                    <div class="row g-4">
-                        <div class="col-lg-4 text-center">
-                            <a href="images/gallery/1.webp" class="image-popup d-block hover">
-                                <div class="relative overflow-hidden">
-                                    <div class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
-                                        <h4 class="mb-0 hover-scale-in-3">View</h4>
-                                    </div> 
-                                    <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
-                                    <img src="images/gallery/1.webp" class="img-fluid hover-scale-1-2" alt="">
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-lg-4 text-center">
-                            <a href="images/gallery/2.webp" class="image-popup d-block hover">
-                                <div class="relative overflow-hidden">
-                                    <div class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
-                                        <h4 class="mb-0 hover-scale-in-3">View</h4>
-                                    </div> 
-                                    <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
-                                    <img src="images/gallery/2.webp" class="img-fluid hover-scale-1-2" alt="">
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-lg-4 text-center">
-                            <a href="images/gallery/3.webp" class="image-popup d-block hover">
-                                <div class="relative overflow-hidden">
-                                    <div class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
-                                        <h4 class="mb-0 hover-scale-in-3">View</h4>
-                                    </div> 
-                                    <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
-                                    <img src="images/gallery/3.webp" class="img-fluid hover-scale-1-2" alt="">
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-lg-4 text-center">
-                            <a href="images/gallery/4.webp" class="image-popup d-block hover">
-                                <div class="relative overflow-hidden">
-                                    <div class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
-                                        <h4 class="mb-0 hover-scale-in-3">View</h4>
-                                    </div> 
-                                    <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
-                                    <img src="images/gallery/4.webp" class="img-fluid hover-scale-1-2" alt="">
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-lg-4 text-center">
-                            <a href="images/gallery/5.webp" class="image-popup d-block hover">
-                                <div class="relative overflow-hidden">
-                                    <div class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
-                                        <h4 class="mb-0 hover-scale-in-3">View</h4>
-                                    </div> 
-                                    <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
-                                    <img src="images/gallery/5.webp" class="img-fluid hover-scale-1-2" alt="">
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-lg-4 text-center">
-                            <a href="images/gallery/6.webp" class="image-popup d-block hover">
-                                <div class="relative overflow-hidden">
-                                    <div class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
-                                        <h4 class="mb-0 hover-scale-in-3">View</h4>
-                                    </div> 
-                                    <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
-                                    <img src="images/gallery/6.webp" class="img-fluid hover-scale-1-2" alt="">
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-            
         </div>
-        <!-- content end -->
-        
-        <!-- footer begin -->
-        <footer class="section-dark">
-            <div class="container relative z-2">
-                <div class="row gx-5 relative z-2">
-                    <div class="col-lg-4 col-sm-6">
-                        <img src="images/logo-white.webp" class="w-200px" alt="">
-                        <div class="spacer-20"></div>
-                        <p>We are committed to providing dependable, eco-friendly waste management solutions tailored to the unique needs of homes, businesses, and industries. By combining advanced technology with sustainable practices, we work to reduce environmental impact, increase efficiency, and support a cleaner, greener future for our communities and the planet.</p>
-                    </div>
-                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="widget">
-                                    <h5>Company</h5>
-                                    <ul>
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="services.html">Our Services</a></li>
-                                        <li><a href="projects.html">Projects</a></li>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="widget">
-                                    <h5>Our Services</h5>
-                                    <ul>
-                                        <li><a href="service-single.html">Waste Collection</a></li>
-                                        <li><a href="service-single.html">Commercial Recycling</a></li>
-                                        <li><a href="service-single.html">Dumpster Rental</a></li>
-                                        <li><a href="service-single.html">Organic Waste</a></li>
-                                        <li><a href="service-single.html">E-waste Disposal</a></li>
-                                        <li><a href="service-single.html">Medical Waste</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
-                        <div class="widget">
-                            <h5>Subscribe to Newsletter</h5>
-                            <form action="#" class="row form-dark" id="form_subscribe" method="post" name="form_subscribe">
-                                <div class="col text-center">
-                                    <input class="form-control" id="txt_subscribe" name="txt_subscribe" placeholder="enter your email" type="text" > <a href="#" id="btn-subscribe"><i class="arrow_right bg-color-secondary"></i></a>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </form>
-                            <div class="spacer-10"></div>
-                            <small>Your email is safe with us. We don't spam.</small>
-                            <div class="spacer-30"></div>
 
-                            <div class="widget">
-                                <h5>Follow Us</h5>
-                                <div class="social-icons mb-sm-30">
-                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Picture 2: Waste Sorting -->
+        <div class="photo-card">
 
-                <div class="row">
-                    <div class="col-lg-12 order-3">
-                        <div class="spacer-single"></div>
-                        <div class="spacer-double"></div>
-                        <div class="spacer-double"></div>
-                        <div class="spacer-double"></div>
-                        <div class="abs bottom-0">
-                            <h2 class="text-fit p-0 lh-1 op-2">wastewise</h2>
-                        </div>
-                    </div>
-                </div>
+            <img
+                    src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=800&q=80"
+                    alt="Recycling materials and waste sorting"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='images/waste-sorting.jpg';">
+
+            <div class="photo-caption">
+                <h3>Waste Sorting</h3>
+
+                <p>
+                    Separating plastic, paper, glass and other recyclable
+                    materials makes waste recovery more effective.
+                </p>
             </div>
 
-        </footer>
-        <!-- footer end -->
+        </div>
+
+        <!-- Picture 3: Responsible Waste Management -->
+        <div class="photo-card">
+
+            <img
+                    src="https://groundup.org.za/media/_versions/images/photographers/Yeshiel%20Panchia/WastePickersSorting-YeshielPanchia-2020041411%20April%202020%20GroundUp%204%20of%207_extra_large.jpg"
+                    alt="Responsible waste management and recycling activities"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='images/responsible-waste-management.jpg';">
+
+            <div class="photo-caption">
+                <h3>Responsible Waste Management</h3>
+
+                <p>
+                    Proper waste collection, safe handling and responsible
+                    disposal help create healthier communities and cleaner
+                    public spaces.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Picture 4: Environmental Protection -->
+        <div class="photo-card">
+
+            <img
+                    src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=800&q=80"
+                    alt="Green environment and natural landscape"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='images/environmental-protection.jpg';">
+
+            <div class="photo-caption">
+                <h3>Protecting Our Environment</h3>
+
+                <p>
+                    Reducing waste and protecting natural spaces contribute
+                    to a healthier environment for future generations.
+                </p>
+            </div>
+
+        </div>
+
     </div>
 
+    <!-- GALLERY CATEGORIES -->
 
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
-            <span></span>
-            <span></span>
-        </div>
+    <h2>Explore Our Gallery Categories</h2>
 
-        <div id="extra-content">
-            <img src="images/logo-white.webp" class="w-150px" alt="">
+    <p class="intro">
+        Select a category below to explore our waste management
+        operations, equipment, workforce and environmental projects.
+    </p>
 
-            <div class="spacer-30-line"></div>
+    <div class="gallery-nav">
 
-            <h5>Our Services</h5>
-            <ul class="no-style">
-                <li><a href="service-single.html">Waste Collection</a></li>
-                <li><a href="service-single.html">Commercial Recycling</a></li>
-                <li><a href="service-single.html">Dumpster Rental</a></li>
-                <li><a href="service-single.html">Organic Waste</a></li>
-                <li><a href="service-single.html">E-waste Disposal</a></li>
-                <li><a href="service-single.html">Medical Waste</a></li>
-            </ul>
+        <a class="folder-link" href="category-depot.html">
+            📁 Depot &amp; Machinery
 
-            <div class="spacer-30-line"></div>
+            <span>
+                View processing yards, equipment and facilities.
+            </span>
+        </a>
 
-            <h5>Contact Us</h5>
-            <div><i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
-            <div><i class="icofont-location-pin me-2 op-5"></i>100 S Main St, New York, </div>
-            <div><i class="icofont-envelope me-2 op-5"></i>contact@wastewise.com</div>    
+        <a class="folder-link" href="category-people.html">
+            👷 Our Workforce Team
 
-            <div class="spacer-30-line"></div>
+            <span>
+                Explore staff, recycling teams and site activities.
+            </span>
+        </a>
 
-            <h5>About Us</h5>
-            <p>We provide reliable, eco-conscious waste management solutions for homes, businesses, and industries. With a focus on sustainability and innovation, we help communities reduce waste, recycle more, and create a cleaner, greener future.</p>
+        <a class="folder-link" href="category-services.html">
+            🚛 Fleet &amp; Services in Action
 
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-discord"></i></a>
-                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-        </div>
+            <span>
+                Discover waste collection, transport and recycling services.
+            </span>
+        </a>
+
+        <a class="folder-link" href="category-community.html">
+            🌱 Environmental Impact
+
+            <span>
+                Explore community clean-ups and environmental initiatives.
+            </span>
+        </a>
+
     </div>
 
+    <!-- FOOTER -->
 
-    <!-- Javascript Files
-    ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/designesia.js"></script>
-    <script src="js/custom-marquee.js"></script>
+    <footer>
+
+        <strong>WasteAside — Our Clean Future Environment</strong>
+
+        <p>
+            Working towards responsible waste management,
+            recycling and a cleaner South Africa.
+        </p>
+
+        <p>
+            &copy; 2026 WasteAside. All rights reserved.
+        </p>
+
+    </footer>
+
+</div>
 
 </body>
-
 </html>

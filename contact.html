@@ -1,378 +1,659 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Wastewise — Waste Management and Recycling Website Template</title>
-    <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
-    <meta content="Wastewise — Waste Management and Recycling Website Template" name="description" >
-    <meta content="" name="keywords" >
-    <meta content="" name="author" >
-    <!-- CSS Files
-    ================================================== -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
-    <link href="css/plugins.css" rel="stylesheet" type="text/css" >
-    <link href="css/style.css" rel="stylesheet" type="text/css" >
-    <!-- color scheme -->
-    <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+          content="Contact WasteAside for waste management, recycling and environmental solutions.">
+
+    <title>Contact Us | WasteAside</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #26332b;
+            background: #f7faf7;
+        }
+
+        /* Header and navigation */
+        header {
+            background: #123d2b;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            color: white;
+            font-size: 27px;
+            font-weight: bold;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #b6e879;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #b6e879;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid #b6e879;
+            color: white;
+            padding: 8px 12px;
+            font-size: 22px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Hero section */
+        .hero {
+            padding: 75px 8%;
+            color: white;
+            background:
+                    linear-gradient(
+                            rgba(9, 43, 28, 0.82),
+                            rgba(9, 43, 28, 0.82)
+                    ),
+                    url("https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1500&q=80")
+                    center/cover no-repeat;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #e6f3df;
+            font-size: 18px;
+        }
+
+        /* Main content */
+        main {
+            padding: 60px 8%;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 40px;
+            max-width: 1100px;
+            margin: auto;
+            align-items: start;
+        }
+
+        h2 {
+            color: #174d32;
+            margin-bottom: 18px;
+            font-size: 27px;
+        }
+
+        .contact-info p {
+            margin-bottom: 18px;
+        }
+
+        .contact-info strong {
+            color: #23663e;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #23663e;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact form */
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccd8ce;
+            border-radius: 5px;
+            font: inherit;
+            background: #fcfefc;
+            color: #26332b;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: 2px solid #79bd42;
+            outline-offset: 1px;
+            border-color: #23663e;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            background: #79bd42;
+            color: #102d1e;
+            border: none;
+            border-radius: 5px;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease,
+            transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #b6e879;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Confirmation message */
+        .success-message {
+            display: none;
+            margin-bottom: 22px;
+            padding: 20px;
+            background: #edf8e8;
+            border: 1px solid #79bd42;
+            border-radius: 8px;
+            color: #174d32;
+        }
+
+        .success-message h3 {
+            margin-bottom: 8px;
+            font-size: 21px;
+        }
+
+        .success-message p {
+            margin-bottom: 0;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .form-error {
+            color: #a52a2a;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #123d2b;
+            color: white;
+            text-align: center;
+            padding: 28px 8%;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: #b6e879;
+            text-decoration: none;
+            margin: 0 6px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tablets and mobile devices */
+        @media (max-width: 850px) {
+            header {
+                padding: 16px 5%;
+            }
+
+            nav {
+                gap: 14px;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            main {
+                padding: 45px 6%;
+            }
+
+            .hero {
+                padding: 60px 6%;
+            }
+        }
+
+        /* Mobile navigation */
+        @media (max-width: 650px) {
+            header {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                gap: 0;
+                padding-top: 10px;
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            nav a {
+                display: block;
+                padding: 12px 8px;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+            }
+
+            .hero {
+                padding: 48px 5%;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            main {
+                padding: 35px 5%;
+            }
+
+            .contact-form {
+                padding: 22px 18px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            footer {
+                padding: 25px 5%;
+            }
+
+            footer a {
+                display: inline-block;
+                margin: 5px;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 360px) {
+            .logo {
+                font-size: 21px;
+            }
+
+            .hero h1 {
+                font-size: 29px;
+            }
+
+            .contact-form {
+                padding: 18px 14px;
+            }
+        }
+
+        /* Respect reduced-motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div id="wrapper">
-        <a href="#" id="back-to-top"></a>
 
-        <!-- preloader begin -->
-        <div id="de-loader"></div>
-        <!-- preloader end -->
+<header>
+    <a class="logo" href="index.html">
+        Waste<span>Aside</span>
+    </a>
 
-        <!-- header begin -->
-        <header class="header-light">
-            <div id="topbar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="d-flex justify-content-between xs-hide">
-                                <div class="d-flex">
-                                    <div class="topbar-widget me-3"><a href="#"><i class="icofont-clock-time"></i>Monday - Friday 08.00 - 18.00</a></div>
-                                    <div class="topbar-widget me-3"><a href="#"><i class="icofont-location-pin"></i>100 S Main St, New York, NY</a></div>
-                                    <div class="topbar-widget me-3"><a href="#"><i class="icofont-phone"></i>+1 123 456 789</a></div>
-                                </div>
+    <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="main-navigation">
+        ☰
+    </button>
 
-                                <div class="d-flex">
-                                    <div class="social-icons">
-                                        <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
-                                        <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
-                                        <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
-                                        <a href="#"><i class="fa-brands fa-pinterest fa-lg"></i></a>
-                                        <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="de-flex sm-pt10">
-                            <div class="de-flex-col">
-                                <!-- logo begin -->
-                                <div id="logo">
-                                    <a href="index.html">
-                                        <img class="logo-main" src="images/logo-black.webp" alt="" >
-                                        <img class="logo-mobile" src="images/logo-black.webp" alt="" >
-                                    </a>
-                                </div>
-                                <!-- logo end -->
-                            </div>
-                            <div class="de-flex-col header-col-mid">
-                                <!-- mainemenu begin -->
-                                <ul id="mainmenu">
-                                    <li><a class="menu-item" href="index.html">Home</a>
-                                        <ul>
-                                            <li><a href="index.html">Homepage 1</a></li>
-                                            <li><a href="homepage-2.html">Homepage 2</a></li>
-                                            <li><a href="homepage-3.html">Homepage 3</a></li>
-                                            <li><a href="homepage-4.html">Homepage 4</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="services.html">Services</a>
-                                        <ul>
-                                            <li><a href="services.html">All Services Style 1</a></li>
-                                            <li><a href="services-2.html">All Services Style 2</a></li>
-                                            <li><a href="service-single.html">Service Single</a></li>
-                                            <li><a href="pricing-table.html">Pricing Table</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="projects.html">Projects</a></li>
-                                    <li><a class="menu-item" href="#">Company</a>
-                                        <ul>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="team.html">Our Team</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="blog.html">Blog</a></li>
-                                    <li><a class="menu-item" href="contact.html">Contact</a></li>
-                                </ul>
-                                <!-- mainmenu end -->
-                            </div>
-                            <div class="de-flex-col">
-                                <div class="menu_side_area">
-                                    <a href="booking.html" class="btn-main">Schedule Pickup</a>
-                                    <span id="menu-btn"></span>
-                                </div>
+    <nav id="main-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="contact.html" aria-current="page">Contact Us</a>
+    </nav>
+</header>
 
-                                <div id="btn-extra">
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- header end -->
-        <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
+<section class="hero">
+    <h1>Contact WasteAside</h1>
+    <p>Let's work together towards a cleaner and greener future.</p>
+</section>
 
-            <div id="top"></div>
+<main>
+    <div class="contact-layout">
 
-            <section class="bg-color section-dark text-light no-top no-bottom overflow-hidden">
-                <div class="container-fluid position-relative half-fluid">
-                  <div class="container">
-                    <div class="row">
-                      <!-- Image -->
-                      <div class="col-lg-6 position-lg-absolute right-half h-100">
-                        <div class="de-gradient-edge-top dark"></div>
-                        <div class="image jarallax">
-                            <img src="images/background/13.webp" class="jarallax-img" alt="">
-                        </div>
-                      </div>
-                      <!-- Text -->
-                      <div class="col-lg-6 relative">
-                            <div class="me-lg-4">
-                                <div class="spacer-double"></div>
-                                <div class="spacer-double sm-hide"></div>
-                                <div class="spacer-single sm-hide"></div>
-                                <div class="spacer-single sm-hide"></div>
-                                <div class="spacer-single sm-hide"></div>
-                                <ul class="crumb">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li class="active">Contact Us</li>
-                                </ul>
-                                <h1 class="mb-2 wow fadeInUp" data-wow-delay=".2s">Contact Us</h1>
-                                <p class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">Smart Waste Disposal for a Cleaner Future</p>
-                                <div class="spacer-double"></div>
-                                <div class="spacer-single sm-hide"></div>
+        <!-- Company contact information -->
+        <section class="contact-info">
+            <h2>Get in Touch</h2>
 
-                                <img src="images/misc/recycle-crop-2.webp" class="w-30 abs end-0 bottom-0 z-3" alt="">
-                            </div>
+            <p>
+                Have a question about waste collection, recycling or our
+                environmental solutions? Send us a message using the form.
+            </p>
 
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </section>
+            <p>
+                <strong>Company:</strong><br>
+                WasteAside
+            </p>
 
+            <p>
+                <strong>Our Focus:</strong><br>
+                Waste Management, Recycling and Environmental Protection
+            </p>
 
-            <section>
-                <div class="container">
-                    <div class="row g-4">
-                        <div class="col-lg-6">
-                            <div class="subtitle">Get In Touch</div>
-                            <h2 class="wow fadeInUp">We are always ready to help you and answer your questions</h2>
+            <p>
+                <strong>Email:</strong><br>
+                Please replace this text with your official company email.
+            </p>
 
-                            <p>Whether you have a question, a suggestion, or just want to say hello, this is the place to do it. Please fill out the form below with your details and message, and we'll get back to you as soon as possible.</p>
+            <p>
+                We welcome enquiries from individuals, businesses and
+                organisations interested in sustainable waste management.
+            </p>
 
-                            <div class="row g-4 gx-5">
-                                <div class="col-lg-6">
-                                    <div class="fw-bold text-dark"><i class="icofont-clock-time me-2 id-color-2"></i>We're Open</div>
-                                    Monday - Friday 08.00 - 18.00
-                                </div>
+            <a href="index.html" class="back-link">
+                &larr; Back to Homepage
+            </a>
+        </section>
 
-                                <div class="col-lg-6">
-                                    <div class="fw-bold text-dark"><i class="icofont-location-pin me-2 id-color-2"></i>Office Location</div>
-                                    100 S Main St, New York, NY
-                                </div>
+        <!-- Contact form -->
+        <section class="contact-form">
+            <h2>Send Us a Message</h2>
 
-                                <div class="col-lg-6">
-                                    <div class="fw-bold text-dark"><i class="icofont-phone me-2 id-color-2"></i>Call Us Directly</div>
-                                    +1 123 456 789
-                                </div>
+            <!-- Confirmation appears here after successful validation -->
+            <div
+                    class="success-message"
+                    id="success-message"
+                    role="status"
+                    aria-live="polite"
+                    tabindex="-1">
 
-                                <div class="col-lg-6">
-                                    <div class="fw-bold text-dark"><i class="icofont-envelope me-2 id-color-2"></i>Send a Message</div>
-                                    contact@wastewise.com      
-                                </div>
-                            </div>
+                <h3>Thank You for Contacting WasteAside!</h3>
 
-
-
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="p-40 bg-color-op-1">
-                                <h3>Get In Touch</h3>
-                                <form name="contactForm" id="contact_form" class="form-underline position-relative z1000" method="post" action="contact.php">
-
-                                    <div class="field-set">
-                                        <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
-                                    </div>
-
-                                    <div class="field-set">
-                                        <input type="text" name="email" id="email" class="form-control" placeholder="Your Email" required>
-                                    </div>
-
-                                    <div class="field-set">
-                                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone" required>
-                                    </div>
-
-                                    <div class="field-set mb20">
-                                        <textarea name="message" id="message" class="form-control" placeholder="Your Message" required></textarea>
-                                    </div>
-
-
-                                    <div id='submit' class="mt20">
-                                        <input type='submit' id='send_message' value='Send Message' class="btn-main">
-                                    </div>
-
-                                    <div id="success_message" class='success'>
-                                        Your message has been sent successfully. Refresh this page if you want to send more messages.
-                                    </div>
-                                    <div id="error_message" class='error'>
-                                        Sorry there was an error sending your form.
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-        </div>
-        <!-- content end -->
-
-        <!-- footer begin -->
-        <footer class="section-dark">
-            <div class="container relative z-2">
-                <div class="row gx-5 relative z-2">
-                    <div class="col-lg-4 col-sm-6">
-                        <img src="images/logo-white.webp" class="w-200px" alt="">
-                        <div class="spacer-20"></div>
-                        <p>We are committed to providing dependable, eco-friendly waste management solutions tailored to the unique needs of homes, businesses, and industries. By combining advanced technology with sustainable practices, we work to reduce environmental impact, increase efficiency, and support a cleaner, greener future for our communities and the planet.</p>
-                    </div>
-                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="widget">
-                                    <h5>Company</h5>
-                                    <ul>
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="services.html">Our Services</a></li>
-                                        <li><a href="projects.html">Projects</a></li>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="widget">
-                                    <h5>Our Services</h5>
-                                    <ul>
-                                        <li><a href="service-single.html">Waste Collection</a></li>
-                                        <li><a href="service-single.html">Commercial Recycling</a></li>
-                                        <li><a href="service-single.html">Dumpster Rental</a></li>
-                                        <li><a href="service-single.html">Organic Waste</a></li>
-                                        <li><a href="service-single.html">E-waste Disposal</a></li>
-                                        <li><a href="service-single.html">Medical Waste</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
-                        <div class="widget">
-                            <h5>Subscribe to Newsletter</h5>
-                            <form action="#" class="row form-dark" id="form_subscribe" method="post" name="form_subscribe">
-                                <div class="col text-center">
-                                    <input class="form-control" id="txt_subscribe" name="txt_subscribe" placeholder="enter your email" type="text" > <a href="#" id="btn-subscribe"><i class="arrow_right bg-color-secondary"></i></a>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </form>
-                            <div class="spacer-10"></div>
-                            <small>Your email is safe with us. We don't spam.</small>
-                            <div class="spacer-30"></div>
-
-                            <div class="widget">
-                                <h5>Follow Us</h5>
-                                <div class="social-icons mb-sm-30">
-                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12 order-3">
-                        <div class="spacer-single"></div>
-                        <div class="spacer-double"></div>
-                        <div class="spacer-double"></div>
-                        <div class="spacer-double"></div>
-                        <div class="abs bottom-0">
-                            <h2 class="text-fit p-0 lh-1 op-2">wastewise</h2>
-                        </div>
-                    </div>
-                </div>
+                <p>
+                    Thanks for contacting WasteAside. We will shortly
+                    get back to you!
+                </p>
             </div>
 
-        </footer>
-        <!-- footer end -->
+            <p
+                    class="form-error"
+                    id="form-error"
+                    role="alert">
+            </p>
+
+            <form id="contact-form">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            maxlength="100"
+                            autocomplete="name"
+                            required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            maxlength="254"
+                            autocomplete="email"
+                            required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            maxlength="30"
+                            autocomplete="tel"
+                            required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea
+                            id="message"
+                            name="message"
+                            maxlength="5000"
+                            placeholder="How can WasteAside help you?"
+                            required></textarea>
+                </div>
+
+                <button type="submit" class="btn" id="submit-button">
+                    Send Message
+                </button>
+
+            </form>
+        </section>
+
     </div>
+</main>
 
+<footer>
+    <p><strong>WasteAside</strong> — Our Clean Future Environment</p>
 
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
-            <span></span>
-            <span></span>
-        </div>
+    <p>
+        <a href="index.html">Home</a> |
+        <a href="index.html#services">Services</a> |
+        <a href="index.html#projects">Projects</a> |
+        <a href="contact.html">Contact Us</a>
+    </p>
 
-        <div id="extra-content">
-            <img src="images/logo-white.webp" class="w-150px" alt="">
+    <p>
+        &copy; <span id="current-year"></span>
+        WasteAside. All rights reserved.
+    </p>
+</footer>
 
-            <div class="spacer-30-line"></div>
+<script>
+    // Automatically update the footer year
+    document.getElementById("current-year").textContent =
+        new Date().getFullYear();
 
-            <h5>Our Services</h5>
-            <ul class="no-style">
-                <li><a href="service-single.html">Waste Collection</a></li>
-                <li><a href="service-single.html">Commercial Recycling</a></li>
-                <li><a href="service-single.html">Dumpster Rental</a></li>
-                <li><a href="service-single.html">Organic Waste</a></li>
-                <li><a href="service-single.html">E-waste Disposal</a></li>
-                <li><a href="service-single.html">Medical Waste</a></li>
-            </ul>
+    // Mobile navigation menu
+    const menuToggle = document.getElementById("menu-toggle");
+    const navigation = document.getElementById("main-navigation");
 
-            <div class="spacer-30-line"></div>
+    menuToggle.addEventListener("click", function () {
+        const isOpen = navigation.classList.toggle("open");
 
-            <h5>Contact Us</h5>
-            <div><i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
-            <div><i class="icofont-location-pin me-2 op-5"></i>100 S Main St, New York, </div>
-            <div><i class="icofont-envelope me-2 op-5"></i>contact@wastewise.com</div>
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
 
-            <div class="spacer-30-line"></div>
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
 
-            <h5>About Us</h5>
-            <p>We provide reliable, eco-conscious waste management solutions for homes, businesses, and industries. With a focus on sustainability and innovation, we help communities reduce waste, recycle more, and create a cleaner, greener future.</p>
+    // Close the mobile menu after choosing a link
+    navigation.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            navigation.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+            menuToggle.textContent = "☰";
+        });
+    });
 
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-discord"></i></a>
-                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
+    // Contact form validation and confirmation
+    const contactForm = document.getElementById("contact-form");
+    const successMessage = document.getElementById("success-message");
+    const formError = document.getElementById("form-error");
+    const submitButton = document.getElementById("submit-button");
 
-    <!-- Javascript Files
-    ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/designesia.js"></script>
-    <script src="js/validation-contact.js"></script>
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        formError.textContent = "";
+
+        // Check the browser's built-in required-field validation
+        if (!contactForm.checkValidity()) {
+            contactForm.reportValidity();
+            return;
+        }
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        // Check that fields are not just spaces
+        if (!name || !email || !phone || !message) {
+            formError.textContent =
+                "Please complete all fields before submitting.";
+            return;
+        }
+
+        // Check the email format
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            formError.textContent =
+                "Please enter a valid email address.";
+            document.getElementById("email").focus();
+            return;
+        }
+
+        // Display the confirmation message
+        successMessage.classList.add("show");
+        successMessage.focus();
+
+        // Hide the form after displaying the confirmation
+        contactForm.classList.add("hidden");
+
+        // Update the button text as an additional confirmation
+        submitButton.textContent =
+            "Thanks for Contacting WasteAside!";
+
+        // Clear the entered information
+        contactForm.reset();
+
+        // Bring the confirmation into view
+        successMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    });
+</script>
 
 </body>
-
 </html>

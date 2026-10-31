@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Quotation | WasteAside</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7faf7; color: #26332b; padding: 40px 5%; }
+        .container { max-width: 650px; margin: 0 auto; background: white; padding: 35px; border-radius: 8px; box-shadow:0 3px 15px rgba(0,0,0,0.05); }
+        h1 { color: #123d2b; }
+        .row { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 6px; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #123d2b; color: white; border: none; padding: 12px 24px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="index.html" style="text-decoration:none; color:#123d2b; font-weight:bold;">&larr; Home</a><br><br>
+    <h1>Product & Skipper Quotation Request</h1><br>
+    <p style="margin-bottom:20px; color:#555;">Select your required commercial path (Purchase vs Ongoing Rental Setup) to receive a calculated cost estimate sheet.</p>
+
+    <form action="#" method="POST">
+        <div class="row">
+            <label for="req-type">Requirement Category</label>
+            <select id="req-type" name="Quote Intention" required>
+                <option value="">-- Choose Allocation Intention --</option>
+                <option value="rental">Request for Rental Quote (Skipper Bins & Equipment)</option>
+                <option value="sales">Request for Sales Purchase Quote (Skipper Bins & Safety Products)</option>
+            </select>
+        </div>
+        <div class="row">
+            <label for="bin-size">Preferred Product Specification</label>
+            <select id="bin-size" name="Product Size">
+                <option value="2m3">2 Cubic Meter Mini Skip</option>
+                <option value="4m3">4 Cubic Meter Midi Skip</option>
+                <option value="6m3">6 Cubic Meter Maxi Skip</option>
+                <option value="protective-gear">Industrial Storage Containers / Accessories</option>
+            </select>
+        </div>
+        <div class="row">
+            <label for="duration">Estimated Project Length / Quantity Needed</label>
+            <input type="text" id="duration" placeholder="e.g., 3-month rental / 5 permanent bin units buy order" required>
+        </div>
+        <div class="row">
+            <label for="user-phone">Contact Number</label>
+            <input type="tel" id="user-phone" required>
+        </div>
+        <button type="submit">Submit Quote Parameters</button>
+    </form>
+</div>
+</body>
+</html>

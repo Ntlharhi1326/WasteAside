@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Logistics Registration | WasteAside</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7faf7; color: #26332b; padding: 40px 5%; }
+        .form-container { max-width: 650px; margin: 0 auto; background: white; padding: 35px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        h1 { color: #123d2b; margin-bottom: 15px; }
+        .input-group { margin-bottom: 18px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        .notice { background: #eaf3e8; padding: 15px; border-radius: 4px; color: #123d2b; font-size: 14px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <a href="index.html" style="text-decoration:none; color:#123d2b; font-weight:bold;">&larr; Home</a><br><br>
+    <h1>Register Your Vehicle Partner Network</h1>
+    <div class="notice">
+        <strong>Earn with your vehicle:</strong> Own a bakkie, trailer, or transit van? Complete the registry form below to claim scheduled paid collection slots in your neighborhood.
+    </div>
+    <form action="#" method="POST">
+        <div class="input-group">
+            <label for="driver-name">Driver Legal Name</label>
+            <input type="text" id="driver-name" required>
+        </div>
+        <div class="input-group">
+            <label for="v-type">Vehicle Configuration Style</label>
+            <select id="v-type" required>
+                <option value="">-- Choose Profile Variant --</option>
+                <option value="bakkie-open">Standard Open Bed Bakkie</option>
+                <option value="bakkie-canopy">Bakkie featuring High Canopy</option>
+                <option value="van-4ton">4-Ton Industrial Drop-Side Truck</option>
+                <option value="panel-van">Closed Commercial Panel Van</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="license-num">Vehicle License Plate Number</label>
+            <input type="text" id="license-num" placeholder="e.g., AB 12 CD GP" required>
+        </div>
+        <div class="input-group">
+            <label for="region">Primary Operating Suburb/Area</label>
+            <input type="text" id="region" placeholder="e.g., Pretoria East / Central Suburbs" required>
+        </div>
+        <button type="submit" style="background:#123d2b; color:white; border:none; padding:12px 25px; border-radius:4px; font-weight:bold; cursor:pointer;">Register Logistics Asset</button>
+    </form>
+</div>
+</body>
+</html>

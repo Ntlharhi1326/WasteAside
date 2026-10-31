@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Careers Board | WasteAside</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7faf7; color: #26332b; padding: 40px 5%; }
+        .box { max-width: 900px; margin: 0 auto; }
+        h1 { color: #123d2b; }
+        .job-card { background: white; padding: 25px; border-radius: 6px; margin: 20px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; }
+        .badge { display: inline-block; background: #eaf3e8; color: #123d2b; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+        .old-badge { background: #eee; color: #777; }
+        .apply-btn { background: #b6e879; color: #123d2b; text-decoration: none; padding: 10px 16px; border-radius: 4px; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="box">
+    <a href="index.html" style="text-decoration:none; color:#123d2b; font-weight:bold;">&larr; Home</a><br><br>
+    <h1>Browse WasteAside Career Openings</h1>
+    <p>Explore newly listed organizational positions alongside our historical archival vacancy listings.</p>
+
+    <!-- NEW JOB -->
+    <div class="job-card">
+        <div>
+            <span class="badge">NEWLY LISTED</span>
+            <h2 style="margin:8px 0; font-size:20px;">Depot Logistics Controller</h2>
+            <p style="color:#555;">Location: Central Hub Depot | Full-Time</p>
+        </div>
+        <a href="apply.html?role=LogisticsController" class="apply-btn">Apply Now</a>
+    </div>
+
+    <!-- NEW JOB -->
+    <div class="job-card">
+        <div>
+            <span class="badge">NEWLY LISTED</span>
+            <h2 style="margin:8px 0; font-size:20px;">Heavy Truck Driver (Code 14)</h2>
+            <p style="color:#555;">Location: Regional Operations | Fleet Division</p>
+        </div>
+        <a href="apply.html?role=Code14Driver" class="apply-btn">Apply Now</a>
+    </div>
+
+    <!-- OLD JOB -->
+    <div class="job-card" style="opacity: 0.75;">
+        <div>
+            <span class="badge old-badge">ARCHIVED (Old Listing)</span>
+            <h2 style="margin:8px 0; font-size:20px; color:#666;">Site Scrap sorter (Interim)</h2>
+            <p style="color:#777;">Filled Content Base | Kept open for backfill pool records.</p>
+        </div>
+        <a href="apply.html?role=ArchivedSorter" class="apply-btn" style="background:#ccc;">Submit Speculative CV</a>
+    </div>
+</div>
+</body>
+</html>

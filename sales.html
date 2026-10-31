@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products on Sale & Rental | WasteAside</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7faf7; color: #26332b; padding: 40px 5%; }
+        .wrapper { max-width: 1100px; margin: 0 auto; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .prod-card { background: white; border: 1px solid #e1e8e3; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+        .prod-info { padding: 20px; }
+        .tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; }
+        .tag-sale { background: #b6e879; color: #123d2b; }
+        .tag-rent { background: #123d2b; color: white; }
+        .price-line { font-size: 18px; font-weight: bold; color: #205b3f; margin: 12px 0; }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <a href="index.html" style="text-decoration:none; color:#123d2b; font-weight:bold;">&larr; Home</a><br><br>
+    <h1>Inventory Catalog: Sales & Rental Assets</h1>
+    <p>Browse our field-tested equipment options built to handle intense commercial waste challenges cleanly.</p>
+
+    <div class="product-grid">
+        <!-- Item 1 -->
+        <div class="prod-card">
+            <div class="prod-info">
+                <span class="tag tag-rent">For Rental Only</span>
+                <h3>2m&sup3; Heavy Midi Skipper Bin</h3>
+                <p style="color:#666; font-size:14px; margin-top:5px;">Compact design engineered for easy driveway access and residential construction refuse containment.</p>
+                <div class="price-line">From R450 / Setup Window</div>
+                <a href="quotations.html" class="text-link" style="font-size:14px;">Inquire For Dates &rarr;</a>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="prod-card">
+            <div class="prod-info">
+                <span class="tag tag-sale">Direct Purchase</span>
+                <h3>6m&sup3; High-Capacity Steel Skip Bin</h3>
+                <p style="color:#666; font-size:14px; margin-top:5px;">Heavy-gauge reinforced base framing built for continuous industrial and factory yard scrap demands.</p>
+                <div class="price-line">R14,850 Base Cost</div>
+                <a href="quotations.html" class="text-link" style="font-size:14px;">Request Procurement &rarr;</a>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="prod-card">
+            <div class="prod-info">
+                <span class="tag tag-sale">Direct Purchase</span>
+                <h3>Color-Coded Recycling Station Bin Set</h3>
+                <p style="color:#666; font-size:14px; margin-top:5px;">A triple-compartment setup designed to simplify commercial office paper, tin, and plastic separation.</p>
+                <div class="price-line">R1,200 Per Station Set</div>
+                <a href="quotations.html" class="text-link" style="font-size:14px;">Order Units &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
